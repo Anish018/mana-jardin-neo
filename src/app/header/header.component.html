@@ -1,0 +1,71 @@
+<header>
+  <a href="/" class="logo">
+    <img class="img-logo" src="../../assets/logos/mana-logo.png" alt="" />
+  </a>
+  <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">☰</button>
+  <nav class="navigation" [class.active]="mobileMenuOpen">
+    <ul class="nav-list">
+      <div class="mob-logo-div">
+        <img
+          class="mob-logo"
+          src="../../assets/logos/mana-logo.png"
+          alt=""
+        />
+      </div>
+
+      <li>
+        <a
+          [class.active-link]="isActive('s1')"
+          href="#"
+          (click)="scrollToSection('s1', $event)"
+          >Discover Jardin Neo </a
+        >
+      </li>
+      <li>
+        <a
+          [class.active-link]="isActive('about-us')"
+          href="#"
+          (click)="navigateTo('about-us'); $event.preventDefault()"
+          >Plans</a
+        >
+      </li>
+      <li>
+        <a
+          [class.active-link]="isActive('s4')"
+          href="#"
+          (click)="scrollToSection('s4', $event)"
+          >VR</a
+        >
+      </li>
+      <li>
+        <a
+          [class.active-link]="isActive('s6')"
+          href="#"
+          (click)="scrollToSection('s6', $event)"
+          >Blog</a
+        >
+      </li>
+
+      <li>
+        <a
+          [class.active-link]="isActive('contact-us')"
+          (click)="scrollToSection('contact-us', $event)"
+          >Buyer’s Guide </a
+        >
+      </li>
+      <li>
+        <a
+          [class.active-link]="isActive('contact-us')"
+          (click)="scrollToSection('contact-us', $event)"
+          >About Us </a
+        >
+      </li>
+      <button class="mob-book-btn">Book a visit</button>
+      <button class="close-menu-btn" (click)="closeMobileMenu()">
+        <i class="material-icons">close</i>
+      </button>
+    </ul>
+  </nav>
+  <button class="desk-book-btn">Book a visit</button>
+
+</header>
