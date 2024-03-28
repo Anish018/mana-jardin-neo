@@ -14,12 +14,9 @@
       </div>
 
       <li>
-        <a
-          [class.active-link]="isActive('s1')"
-          href="#"
-          (click)="scrollToSection('s1', $event)"
-          >Discover Jardin Neo </a
-        >
+        <a [routerLink]="'/discover-jardin-neo'" routerLinkActive="active-link">Discover Jardin Neo</a>
+
+      
       </li>
       <li>
         <a

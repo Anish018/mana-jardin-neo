@@ -1,0 +1,31 @@
+<div class="carousel" #carousel>    
+    <div class="slide"> 
+        <div class="img-container">
+        </div>
+        <div class="content">
+            <h1 class="slide-title">Conceirge Service</h1>
+            <p class="slide-desc">Introducing Jardin Neo, an exquisite residential enclave, luxury apartments
+                near Wipro, meticulously crafted for the discerning few, nestled within this
+                exclusive complex, boasting a mere 80 residences. A G+ 21 apartment
+                structure in Sarjapur, Bangalore, with variations of 3/4/5 BHK, that comes
+                with 3 parking spaces, presidential penthouses, and is packaged with the
+                best of what life has to offer.</p>
+        </div>
+        
+    </div>
+    <div class="slide"> 
+        <div class="img-container">
+        </div>
+        <div class="content">
+            <h1 class="slide-title">Conceirge Service</h1>
+            <p class="slide-desc">Introducing Jardin Neo, an exquisite residential enclave, luxury apartments
+                near Wipro, meticulously crafted for the discerning few, nestled within this
+                exclusive complex, boasting a mere 80 residences. A G+ 21 apartment
+                structure in Sarjapur, Bangalore, with variations of 3/4/5 BHK, that comes
+                with 3 parking spaces, presidential penthouses, and is packaged with the
+                best of what life has to offer.</p>
+        </div>
+    </div>
+</div>
+<img class="left-angle" [ngClass]="{'disabled': isAtStart(), 'enabled': !isAtStart()}" src="../../assets/icons/left-angle.svg" alt="left-btn" (click)="onNavigate('left')">
+<img class="right-angle" [ngClass]="{'disabled': isAtEnd(), 'enabled': !isAtEnd()}" src="../../assets/icons/right-angle.svg" alt="right-btn" (click)="onNavigate('right')">

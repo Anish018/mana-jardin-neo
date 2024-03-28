@@ -1,0 +1,32 @@
+<section class="section">
+  <div class="align">
+    <div class="text-content">
+      <h1 class="title">
+        We never compromise on quality
+      </h1>
+      <p class="desc">
+        At Mana Jardin Neo, we believe in providing the best living experience
+        to our residents. Our commitment to quality is reflected in the reviews
+        we receive from our residents. Here are some of the reviews from our
+        residents.
+      </p>
+    </div>
+    <div class="review-content">
+      <div class="tile" *ngFor="let item of tiles">
+        <div class="user-details">
+          <div class="user-dp-container">
+            <img
+              [src]="item.userDP"
+              alt="user"
+              class="user-img"
+            />
+          </div>
+          <div class="user-name">{{item.userName}}</div>
+        </div>
+        <p class="review">
+          "{{item.userReview}}"
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

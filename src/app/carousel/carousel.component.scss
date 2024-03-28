@@ -1,0 +1,129 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+  scroll-snap-type: x mandatory;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  position: relative;
+}
+.left-angle {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+.right-angle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+    z-index: 2;
+}
+.img-container{
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+.slide:nth-child(1) {
+  .img-container {
+    background-image: url("../../assets/images/Conceirge.jpg");
+    
+  }
+}
+.slide:nth-child(2) {
+    .img-container {
+      background-image: url("../../assets/images/2unit.jpg");
+
+      
+    }
+  }
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
+.content {
+  background-color: #161c2d;
+  background-image: url("../../assets/images/pattern.png");
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  padding: 10%;
+  color: white;
+  box-sizing: border-box;
+  z-index: 2;
+  position: relative;
+}
+.slide-title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.slide-desc {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+/* carousel.component.scss */
+.disabled {
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+.enabled {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+@media (max-width: 1024px) {
+    .left-angle, .right-angle{
+        height: 30px;
+    }
+    .img-container{
+        background-attachment: scroll;
+        position: relative;
+        height: 300px;
+        width: 100%;
+        background-position: bottom center;
+    }
+    .content{
+        width: 100%;
+    }
+    .slide{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:768px) {
+    .left-angle, .right-angle{
+        height: 20px;
+    }
+    .left-angle{
+        left: 10px;
+    }
+    .right-angle{
+        right: 10px;
+    }
+    .slide-title{
+        font-size: 30px;
+    }
+    .slide-desc{
+        font-size: 18px;
+    }
+    
+}

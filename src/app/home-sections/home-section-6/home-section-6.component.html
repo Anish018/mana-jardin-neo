@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="align">
+    <div class="text-content">
+      <h1 class="title">Amenities</h1>
+      <p class="desc">
+        Introducing Jardin Neo, an exquisite residential enclave, luxury
+        apartments near Wipro, meticulously crafted for the discerning few,
+        nestled within this exclusive complex, boasting a mere 80 residences. A
+        G+ 21 apartment structure in Sarjapur, Bangalore, with variations of
+        3/4/5 BHK, that comes with 3 parking spaces, presidential penthouses,
+        and is packaged with the best of what life has to offer.
+      </p>
+    </div>
+    <div class="tile-content">
+      <div class="tile" *ngFor="let item of tiles">
+        <div class="tile-icon-div">
+          <img class="icon" [src]="item.icon" alt="icon" />
+        </div>
+        <p class="tile-desc">{{item.text}}</p>
+      </div>
+    </div>
+  </div>
+</section>

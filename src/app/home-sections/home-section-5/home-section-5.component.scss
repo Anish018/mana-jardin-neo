@@ -1,0 +1,30 @@
+.carousel {
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+    scroll-snap-type: x mandatory;
+    overflow: auto;
+    width: 100%; // Ensure this accommodates exactly 3 cards at a time
+    scroll-behavior: smooth;
+  }
+  
+  .slide {
+    min-width: 80%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 500px;
+
+    &:nth-child(1) {
+        background-color: red;
+      }
+      &:nth-child(2) {
+        background-color: blue;
+      }
+      &:nth-child(3) {
+        background-color: green;
+      }
+      &:nth-child(4) {
+        background-color: yellow;
+      }
+  }
+  

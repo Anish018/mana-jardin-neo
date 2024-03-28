@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -129,14 +130,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   
   navigateTo(path: string) {
+    console.log(`Navigating to ${path}`); // Debugging: Log navigation attempts
     this.activeSection = path; // Set the active section/path
-    this.router.navigateByUrl(`/${path}`).then(() => {
-      // Check if running in browser
-      if (isPlatformBrowser(this.platformId)) {
-        window.scrollTo(0, 0); // Scroll to the top of the page
+    this.router.navigateByUrl(`/${path}`).then(success => {
+      if (success) {
+        console.log('Navigation successful!'); // Debugging: Confirm navigation success
+        if (isPlatformBrowser(this.platformId)) {
+          window.scrollTo(0, 0); // Scroll to the top of the page
+        }
+      } else {
+        console.error('Navigation failed!'); // Debugging: Log failed navigation attempts
       }
     });
   }
+  
     // Add a method to determine if a section/page is active
     isActive(sectionOrPath: string): boolean {
       // If on a specific page, ensure it remains active regardless of scroll
