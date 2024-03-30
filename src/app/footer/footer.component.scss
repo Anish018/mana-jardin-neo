@@ -10,6 +10,9 @@
     border-bottom: 1px solid #ffffff;
 
 }
+.list1, .list2, .list3{
+  padding-right: 30px;
+}
 .list4{
     li{
         display: flex;
@@ -20,17 +23,16 @@
     }
 }
   
-  .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
   
   .footer-block {
-    margin: 20px;
+    
     img{
         padding-right: 10px;
         margin-top: 5px;
@@ -67,9 +69,82 @@
     padding-top: 10px;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     .footer-container {
-      flex-direction: column;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid */
+    }
+  
+    .footer-logo {
+      place-self: center;
+      text-align: center;
+      order: 5; /* Places the logo block at the end */
+      grid-column: 1 / -1; /* Makes the logo block span two columns */
+    }
+    .footer-block{
+      padding-bottom: 30px;
+    }
+  
+    .footer-block:nth-of-type(1) { /* Block 2 - Pages */
+      order: 1;
+    }
+  
+    .footer-block:nth-of-type(2) { /* Block 3 - Legal */
+      order: 2;
+    }
+  
+    .footer-block:nth-of-type(3) { /* Block 4 - Contact Us */
+      order: 4;
+    }
+  
+    .footer-block:nth-of-type(4) { /* Block 5 - Social Media */
+      order: 3;
     }
   }
+  
+  @media (max-width: 480px) {
+    .list1, .list2, .list3{
+      padding: 0;
+    }
+    .list1{
+      width: 130px;
+    }
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid */
+        grid-gap: 0; /* Adds some space between the grid items */
+    }
+  
+    .footer-logo {
+        img{
+          width: 120px;
+        }
+        order: 5; /* Places the logo block at the end */
+        grid-column: 1 / -1; /* Makes the logo block span two columns */
+    }
+    
+    .footer-block {
+        width: auto; /* Resets any specific width */
+        padding-bottom: 20px;
+        margin: 0; /* Resets the margin to ensure they fit within the columns */
+    }
+  
+    /* Correct the order based on the actual layout */
+    .footer-container > .footer-block:nth-child(1) { /* This is the first .footer-block which is Pages */
+        order: 2;
+    }
+  
+    .footer-container > .footer-block:nth-child(2) { /* This is the second .footer-block which is Legal */
+        order: 3;
+    }
+  
+    .footer-container > .footer-block:nth-child(3) { /* This is the third .footer-block which is Contact Us */
+        order: 4;
+    }
+  
+    .footer-container > .footer-block:nth-child(4) { /* This is the fourth .footer-block which is Social Media */
+        order: 1;
+    }
+}
+  
+  

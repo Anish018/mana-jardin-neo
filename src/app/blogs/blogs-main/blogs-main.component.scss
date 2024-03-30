@@ -64,3 +64,45 @@
         bottom: 190px;
     }
 }
+
+@media (max-width: 1600px) {
+.section2{
+    .align{
+        width: 100%;
+    }
+}
+}
+@media (max-width: 1185px){
+.section2{
+    .titles{
+        flex-direction: column;
+    }
+    .title4{
+        bottom: 0;
+    }
+    h2{
+        width: 60%;
+    }
+}
+}
+@media (max-width: 768px){
+    .section1{
+        h2{
+            font-size: 60px;
+        }
+    }
+
+}
+@media (max-width: 550px){
+    .section1{
+        h2{
+            font-size: 40px;
+        }
+    }
+    .section2{
+        img{
+            width: 90%;
+        }
+    }
+
+}
