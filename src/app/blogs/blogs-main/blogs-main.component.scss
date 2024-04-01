@@ -1,10 +1,10 @@
 .section{
-    padding: 50px 0px;
     width: 100%;
+    padding: 0;
 }
 
 .section1 {
-    padding-top: 0;
+    
     h2 {
       font-size: 76px;
     }
@@ -34,6 +34,8 @@
 
 
 .section2{
+    padding: 100px 0;
+    background-color: #FFF6E5;
     img{
         border-radius: 10px;
     }
@@ -58,10 +60,21 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 100px;
+        max-width: 1200px;
     }
     .title4{
         position: relative;
         bottom: 190px;
+    }
+    .title1, .title2, .title3, .title4{
+        cursor: pointer;
+        img {
+            transition: transform 0.3s ease; /* Smooth transition for transform property */
+          }
+          
+          img:hover {
+            transform: scale(1.03); /* Scale image up slightly on hover */
+          }
     }
 }
 
@@ -100,6 +113,10 @@
         }
     }
     .section2{
+        h2{
+            width: 90%;
+            font-size: 26px;
+        }
         img{
             width: 90%;
         }
