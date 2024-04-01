@@ -22,3 +22,34 @@
         box-sizing: border-box;
     }
 }
+.section2{
+    padding-bottom: 50px;
+    .left, .right{
+        width: 50%;
+    }
+    .left{
+        img{
+            width: 100%;
+        }
+    }
+    .align{
+        display: flex;
+        gap: 30px;
+    }
+    .right{
+        .text{
+            padding: 20px 0;
+        }
+        .num{
+            padding: 10px 0;
+        }
+        h4{
+            padding-bottom: 10px;
+        }
+        .map-link{
+            width: fit-content;
+            color: blue;
+            cursor: pointer;
+        }
+    }
+}
