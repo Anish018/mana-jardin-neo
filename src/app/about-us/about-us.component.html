@@ -52,28 +52,33 @@
              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod numquam iste dicta sequi autem in perspiciatis obcaecati sint ipsa nostrum.</p>
         </div>
         <div class="middle">
-
-
-        </div>
-        <div class="bottom">
-            <div class="left">
-            <img src="../../assets/images/Project.png" alt="">
+          <img class="carousel-control left" src="../../assets/icons/left-arrow.svg" alt="" (click)="navigateCarousel(-1)">
+            <img class="carousel-control right" src="../../assets/icons/right-arrow.svg" alt="" (click)="navigateCarousel(1)">
+            <div class="carousel-container" #carousel>
+              <div *ngFor="let item of carouselItems; let i = index" class="carousel-item" [class.selected]="i === currentItemIndex">
+                <img [src]="item.icon" alt="{{ item.label }}" class="icon">
+                <div class="label">{{ item.label }}</div>
+              </div>
             </div>
-            <div class="right">
-                <div class="text">
-                    <img src="../../assets/icons/tick.svg" alt="">
-                    <p>RCC Framed Structure with RCC walls.</p>
-                </div>
-                <div class="text">
-                    <img src="../../assets/icons/tick.svg" alt="">
-                    <p>Open kitchen concept.</p>
-                </div>
-                <div class="text">
-                    <img src="../../assets/icons/tick.svg" alt="">
-                    <p>Walls 160mm thick.</p>
-                </div>
+            <div class="controls">
+              <button (click)="navigateCarousel(-1)">Left</button>
+              <button (click)="navigateCarousel(1)">Right</button>
             </div>
+            
+
+      </div>
+      
+      <div class="bottom">
+        <div class="left">
+          <img [src]="carouselItems[currentItemIndex].imagePath" alt="{{ carouselItems[currentItemIndex].label }}">
         </div>
+        <div class="right">
+          <div class="text" *ngFor="let desc of carouselItems[currentItemIndex].descriptions">
+            <img src="../../assets/icons/tick.svg" alt="Checkmark Icon">
+            <p>{{ desc }}</p>
+          </div>
+        </div>
+      </div>
     </div>
 </section>
 
@@ -86,4 +91,4 @@
     </div>
 </section>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

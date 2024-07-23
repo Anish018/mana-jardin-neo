@@ -1,4 +1,4 @@
-<header>
+<header [ngClass]="headerClass">
   <a href="/" class="logo">
     <img class="img-logo" src="../../assets/logos/mana-logo.png" alt="" />
   </a>
@@ -14,47 +14,54 @@
       </div>
 
       <li>
-        <a [routerLink]="'/discover-jardin-neo'" routerLinkActive="active-link">Discover Jardin Neo</a>
-
+        <a
+        [class.active-link]="isActive('discover-jardin-neo')"
+        (click)="navigateTo('discover-jardin-neo'); $event.preventDefault()"
+        >Discover Jardin Neo</a
+      >
       
       </li>
       <li>
         <a
-          [class.active-link]="isActive('about-us')"
-          href="#"
-          (click)="navigateTo('about-us'); $event.preventDefault()"
+          [class.active-link]="isActive('plans')"
+          (click)="navigateTo('plans'); $event.preventDefault()"
           >Plans</a
         >
       </li>
       <li>
         <a
-          [class.active-link]="isActive('s4')"
-          href="#"
-          (click)="scrollToSection('s4', $event)"
+        [class.active-link]="isActive('vr')"
+        (click)="navigateTo('vr'); $event.preventDefault()"
           >VR</a
         >
       </li>
       <li>
         <a
-          [class.active-link]="isActive('s6')"
-          href="#"
-          (click)="scrollToSection('s6', $event)"
+          [class.active-link]="isActive('blog')"
+          (click)="navigateTo('blog'); $event.preventDefault()"
           >Blog</a
         >
       </li>
 
       <li>
         <a
-          [class.active-link]="isActive('contact-us')"
-          (click)="scrollToSection('contact-us', $event)"
+          [class.active-link]="isActive('buyers-guide')"
+          (click)="navigateTo('buyers-guide'); $event.preventDefault()"
           >Buyer’s Guide </a
         >
       </li>
       <li>
         <a
-          [class.active-link]="isActive('contact-us')"
-          (click)="scrollToSection('contact-us', $event)"
+          [class.active-link]="isActive('about-us')"
+          (click)="navigateTo('about-us'); $event.preventDefault()"
           >About Us </a
+        >
+      </li>
+      <li>
+        <a
+          [class.active-link]="isActive('contact-us')"
+          (click)="navigateTo('contact-us'); $event.preventDefault()"
+          >Contact Us </a
         >
       </li>
       <button class="mob-book-btn">Book a visit</button>

@@ -1,0 +1,115 @@
+.section1 {
+    padding: 0;
+    h2 {
+      font-size: 70px;
+      color: #161C2D;
+    }
+    h4{
+        color:  #DB8B00;;
+    }
+    p{
+        color: #161C2D;
+    }
+    .text-overlay {
+        z-index: 4;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around; // changed from space-around for consistent alignment
+        align-items: center;
+        color: white; /* Choose text color that contrasts with your image */
+        font-size: 20px; /* Adjust size as needed */
+        /* Optionally add more styling here to customize the appearance */
+        padding: 2em; // Added padding for aesthetics
+        box-sizing: border-box; // Ensures padding does not affect width
+        gap: 40px;
+      }
+  .content {
+    height: 100%;
+    background-image: url("../../assets/images/vr.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    position: relative; /* Ensure this container is positioned to act as the anchor for the absolutely positioned ::before */
+  }
+  .left, .right{
+    width: 50%;
+  }
+  .left{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .right{
+    text-align: center;
+    img{
+        width: 60%;
+    }
+  }
+  .tour-btn {
+    margin-left: 0;
+    font-family: "Proxima";
+    width: fit-content;
+    background-color: #DB8B00;
+    color: white;
+    border: none;
+    font-size: 25px;
+    border-radius: 6px;
+    padding: 15px 50px;
+    cursor: pointer; /* Makes it clear it's clickable */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .tour-btn:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    background-color: #d7a54e; /* Lighter shade for hover */
+  }
+}
+
+@media (max-width: 1150px){
+.section1{
+    .text-overlay{
+        flex-direction: column-reverse;
+        padding-bottom: 50px;
+        justify-content: space-evenly;
+    }
+    .left, .right{
+        width: 90%;
+    }
+    .right{
+        img{
+        width: 50%;
+        }
+    }
+}
+}
+
+@media (max-width: 786px){
+.section1{
+    h2{
+        font-size: 35px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    p{
+        font-size: 18px;
+    }
+    .left, .right{
+        width: 100%;
+    }
+    .left{
+        gap: 15px;
+    }
+    .right{
+        margin-top: 60px;
+        img{
+        width: 90%;
+        }
+    }
+    .tour-btn{
+        font-size: 20px;
+        padding: 10px 30px;
+    }
+}
+}

@@ -1,14 +1,26 @@
-<div class="carousel" #carousel>
-    <div class="slide">
-    <div class="content">slide 1 other conntent</div>
+<div class="slider-container" #slider>
+  <div class="carousel" #carousel appScrollHorizontal (scroll)="onScroll()">
+  <div
+    class="slider-item"
+    *ngFor="let image of images; let i = index"
+    [ngClass]="{
+      'selected': i === selectedIndex,
+      'prev': i === selectedIndex - 1,
+      'next': i === selectedIndex + 1,
+      'hideLeft': i < selectedIndex - 1,
+      'hideRight': i > selectedIndex + 1
+    }"
+  >
+    <img
+      [src]="image.imgSrc"
+      [alt]="image.imgAlt"
+      class="slider-img"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+      draggable="false"
+    />
   </div>
-  <div class="slide">
-    <div class="content">slide 2 etc</div>
-  </div>
-  <div class="slide">
-    <div class="content">slide 3 some text</div>
-  </div>
-  <div class="slide">
-    <div class="content">slide 4 some more</div>
-  </div>
+</div>
+<img class="left-angle" src="../../../assets/icons/left-angle-2.svg" alt="left-btn" (click)="showPrev()">
+<img class="right-angle" src="../../../assets/icons/right-angle-2.svg" alt="right-btn" (click)="showNext()">
 </div>

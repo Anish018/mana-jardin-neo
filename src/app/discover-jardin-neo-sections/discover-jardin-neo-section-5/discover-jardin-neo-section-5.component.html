@@ -1,0 +1,49 @@
+<section class="section">
+    <div class="align">
+      <div class="content">
+        <div class="left">
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-title" (click)="selectTab('entertainment')">
+                Entertainment & Development
+              </button>
+              <div [class.active]="selectedTab === 'entertainment'" class="accordion-content">
+                <p>With lots of unique blocks, you can easily build a page without coding...</p>
+              </div>
+            </div>
+  
+            <div class="accordion-item">
+              <button class="accordion-title" (click)="selectTab('hospitals')">
+                Hospitals & Tech Parks
+              </button>
+              <div [class.active]="selectedTab === 'hospitals'" class="accordion-content">
+                <p>Content for Hospitals & Tech Parks...</p>
+              </div>
+            </div>
+  
+            <div class="accordion-item">
+              <button class="accordion-title" (click)="selectTab('schools')">
+                Schools & University
+              </button>
+              <div [class.active]="selectedTab === 'schools'" class="accordion-content">
+                <p>Content for Schools & University...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+            <div class="video-container">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  class="video"
+                  src="../../../assets/videos/video.mp4"
+                ></video>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,92 @@
+/* discover-jardin-neo-section-5.component.scss */
+.section {
+    background-color: #F4F7FA;
+  }
+  .left, .right{
+    width: 50%;
+  }
+  .content{
+    display: flex;
+    gap: 100px;
+  }
+  .accordion {
+    width: 100%;
+  }
+  
+  .accordion-item:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .accordion-title {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-title:hover {
+    transform: scale(1.005);
+  }
+  
+  .accordion-title:focus {
+    outline: none;
+  }
+  .accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 10px;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; // Add transition for max-height and padding
+  
+    &.active {
+      max-height: 500px; // Adjust as needed to fit your content
+      padding: 10px;
+    }
+  }
+  .accordion-content p {
+    margin: 0;
+  }
+  
+  /* When a tab is selected, display its content */
+  .active .accordion-content {
+    display: block;
+  }
+
+  .video {
+    width: 100%;
+    // opacity: 0.5;
+    transition: all 0.5s;
+  }
+  .play-btn {
+    background-color: white; // Or any color
+    border: none; // No border
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+    mix-blend-mode: color-dodge;
+  }
+  
+  .play-icon {
+    font-size: 40px; // Icon size, adjust as needed
+    color: black; // Icon color, adjust as needed
+  
+  }
+
+  @media (max-width: 768px){
+    .section{
+      padding: 60px 0;
+    }
+    .content{
+      flex-direction: column;
+      gap: 20px;
+    }
+    .left, .right{
+      width: 100%;
+    }
+
+  }
+  

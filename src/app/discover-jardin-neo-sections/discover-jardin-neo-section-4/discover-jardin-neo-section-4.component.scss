@@ -1,0 +1,18 @@
+.section{
+    background-color: #FFF6E5;
+    padding: 60px 0;
+    position: relative;
+}
+.align{
+    text-align: center;
+    line-height: 1.6;
+    font-size: 18px;
+    padding: 0 6%;
+    box-sizing: border-box;
+}
+@media (max-width: 768px){
+    .align{
+        padding: 0 0;
+    }
+    
+}

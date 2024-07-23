@@ -39,6 +39,9 @@ $mana-jardin-neo-theme: mat.define-light-theme((
   margin: 0;
   padding: 0;
 }
+body{
+  overflow-x: hidden;
+}
 
 @font-face {
   font-family: "Gilroy";
@@ -199,6 +202,10 @@ h5 {
 }
 p {
     font-family: "Gilroy";
+}
+li{
+    font-family: "Gilroy";
+
 }
 body {
   font-family: "Gilroy";

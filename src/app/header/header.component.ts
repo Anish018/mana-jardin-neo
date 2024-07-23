@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, Event as RouterEvent, NavigationEnd } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { RouterModule } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -15,15 +16,22 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent implements OnInit, OnDestroy {
   mobileMenuOpen: boolean = false;
   activeSection: string = '';
+  private routerSubscription!: Subscription;
+  headerClass: string = 'header-top';
+  private shouldHeaderBeOpaque: boolean = false;
 
+
+  
   dropdownStates: {[key: string]: boolean} = {};
   constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
       if (this.activeSection) {
         this.scrollToActiveSection();
       }
+      
     });
   }
+  
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
@@ -34,10 +42,30 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.routerSubscription = this.router.events.pipe(
+      filter((event: RouterEvent): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      // Check if the current route is 'vr' or 'plans'
+      this.shouldHeaderBeOpaque = ['/vr', '/plans'].some(path => event.urlAfterRedirects.includes(path));
+      this.setHeaderClass();
+    });
+
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('scroll', this.onScroll, true);
     }
   }
+
+  private setHeaderClass() {
+    // If we're on 'vr' or 'plans' pages, we want the header to be opaque
+    if (this.shouldHeaderBeOpaque) {
+      this.headerClass = 'header-scrolled';
+    } else {
+      // Here you can handle the logic for when to show a transparent header based on scroll
+      const threshold = 10;
+      this.headerClass = window.scrollY > threshold ? 'header-scrolled' : 'header-top';
+    }
+  }
+  
 
   ngAfterViewInit() {
     // Wait for the view to be initialized to ensure all elements are rendered.
@@ -47,15 +75,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (isPlatformBrowser(this.platformId)) {
-      window.removeEventListener('scroll', this.onScroll, true);
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
     }
   }
 
 
   onScroll = (): void => {
     this.updateActiveSectionOnScroll();
+  
+    // Adjust the threshold as needed
+    const threshold = 10;
+    this.headerClass = window.scrollY > threshold ? 'header-scrolled' : 'header-top';
+    this.setHeaderClass();
   };
+  
+  
   updateActiveSectionOnScroll(): void {
     // Ensure code runs only in the browser
     if (isPlatformBrowser(this.platformId)) {

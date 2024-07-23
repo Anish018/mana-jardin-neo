@@ -1,0 +1,60 @@
+<section  class="section section1">
+    <div class="content">
+      <div class="text-overlay">
+          <h2>Buyer's Guide</h2>
+      </div>
+    </div>
+</section>
+
+<section  class="section section2">
+    <div class="align">
+        <p>Buyer's Guide Content</p>
+    </div>
+</section>
+
+<section  class="section section3">
+    <div class="align">
+        <h2>Frequently Asked Questions</h2>
+        <p>With lots of unique blocks, you can easily build a page without coding.</p>
+        <p>Build your next consultancy website within few minutes.</p>
+        <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-title" (click)="selectTab('albino')">
+                Can I use Albino for my clients?
+              </button>
+              <div [class.active]="selectedTab === 'albino'" class="accordion-content">
+                <p class="acc-text">With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Integer ut Oberyn massa. Sed feugiat vitae turpis a porta. Aliquam sagittis interdum Melisandre.</p>
+              </div>
+            </div>
+  
+            <div class="accordion-item">
+              <button class="accordion-title" (click)="selectTab('wordpress')">
+                Does it work with WordPress?
+              </button>
+              <div [class.active]="selectedTab === 'wordpress'" class="accordion-content">
+                <p class="acc-text">Content for Wordpress.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-title" (click)="selectTab('updates')">
+                    Do I get free updates?
+                </button>
+                <div [class.active]="selectedTab === 'updates'" class="accordion-content">
+                  <p class="acc-text">Content for free updates</p>
+                </div>
+              </div>
+  
+            <div class="accordion-item">
+              <button class="accordion-title" (click)="selectTab('support')">
+                Will you provide support?
+              </button>
+              <div [class.active]="selectedTab === 'support'" class="accordion-content">
+                <p class="acc-text">Content for support</p>
+              </div>
+            </div>
+          </div>
+    </div>
+</section>
+
+<!-- <app-footer></app-footer> -->

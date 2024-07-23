@@ -1,3 +1,9 @@
+.section{
+    font-family: "Gilroy";
+    h1, h2, h3, h4, h5{
+        font-family: "Gilroy" !important;
+    }
+}
 .section1{
     background-color: #111728;
     .align{
@@ -23,25 +29,44 @@
     }
 }
 .section2{
+    background-color: #FFF7E8;
     padding-bottom: 50px;
     .left, .right{
         width: 50%;
     }
     .left{
+        position: relative;
         img{
             width: 100%;
         }
+        .background-image {
+            width: 100%; /* Set the desired width */
+            display: block;
+            
+          }
+          
+          .pin-image {
+            position: absolute;
+            width: 40%;
+            bottom: 35%;
+            right: -10%;
+            
+          }
     }
     .align{
         display: flex;
-        gap: 30px;
+        gap: 10%;
     }
     .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .text{
             padding: 20px 0;
         }
         .num{
             padding: 10px 0;
+            font-weight: 600;
         }
         h4{
             padding-bottom: 10px;
@@ -50,6 +75,23 @@
             width: fit-content;
             color: blue;
             cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 900px){
+    .section2{
+        .align{
+            flex-direction: column;
+            gap: 0;
+        }
+        .right{
+            width: 100%;
+            text-align: -webkit-center;
+        }
+        .left{
+            width: 90%;
+
         }
     }
 }

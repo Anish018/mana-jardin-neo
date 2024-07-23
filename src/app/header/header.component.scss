@@ -11,6 +11,16 @@ header {
   top: 0;
   transform: all 0.3s ease-in-out;
 }
+.header-top {
+  background-color: transparent; // Default state
+  transition: all 0.3s ease-in-out;
+}
+
+.header-scrolled {
+  background-color: #161c2da3; // Or any color you prefer when scrolled
+  transition: all 0.3s ease-in-out;
+}
+
 
 .mob-book-btn, .desk-book-btn {
     padding: 8px 15px;
@@ -132,7 +142,7 @@ a,
 
 
 // Responsive design
-@media (max-width: 1024px) {
+@media (max-width: 1220px) {
     .img-logo{
         width: 120px;
     }

@@ -21,8 +21,10 @@
   .content {
     height: 100%;
     background-image: url("../../assets/images/about-us.png");
+    background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    background-position: right;
+    background-attachment: fixed;
     position: relative; /* Ensure this container is positioned to act as the anchor for the absolutely positioned ::before */
   }
 }
@@ -78,6 +80,63 @@
             padding: 20px 0;
         }
     }
+    .middle {
+        .carousel-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%; /* Full width of the container */
+            justify-content: space-around;
+            margin-bottom: 80px;
+            scroll-behavior: smooth;
+        }
+    
+        .carousel-items {
+            display: flex;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+        }
+    
+        .carousel-item {
+            flex: 0 0 auto; /* Prevent flex items from growing or shrinking */
+            width: 20%; /* Adjust based on your actual item size */
+            text-align: center;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0.5;
+            width: 15%;
+           
+        }
+    
+        .carousel-item.selected {
+            opacity: 1;
+            transform: scale(1.1); /* Adjust scale here to make it slightly smaller */
+            background-color: #FFDC9F; /* Highlight color */
+            z-index: 10; /* Ensures it is above other items */
+            margin: 0 10px;
+            border-radius: 20px;
+            padding: 10px 0;
+        }
+    
+        .carousel-control {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    
+        .carousel-control.left {
+            right: 5%;
+            top: 70px;
+        }
+    
+        .carousel-control.right {
+            left: 100%;
+            top: 70px;
+        }
+    }
+    
+    
+    
     .bottom{
         gap: 50px;
         display: flex;
@@ -92,7 +151,8 @@
         .right{
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: center;
+            gap: 30px;
         }
         .text{
             display: flex;

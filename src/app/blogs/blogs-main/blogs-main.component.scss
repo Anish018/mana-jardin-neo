@@ -26,15 +26,17 @@
   .content {
     height: 100%;
     background-image: url("../../../assets/images/blog.png");
+    background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    background-position: right;
+    background-attachment: fixed;
     position: relative; /* Ensure this container is positioned to act as the anchor for the absolutely positioned ::before */
   }
 }
 
 
 .section2{
-    padding: 100px 0;
+    padding-top: 100px;
     background-color: #FFF6E5;
     img{
         border-radius: 10px;
@@ -66,7 +68,7 @@
         position: relative;
         bottom: 190px;
     }
-    .title1, .title2, .title3, .title4{
+    .title{
         cursor: pointer;
         img {
             transition: transform 0.3s ease; /* Smooth transition for transform property */
@@ -93,6 +95,12 @@
     .title4{
         bottom: 0;
     }
+    .title1,.title4{
+        img{
+            height: 350px;
+            width: 510px;
+        }
+    }
     h2{
         width: 60%;
     }
@@ -118,7 +126,8 @@
             font-size: 26px;
         }
         img{
-            width: 90%;
+            width: 80% !important;
+            height: 240px !important;
         }
     }
 

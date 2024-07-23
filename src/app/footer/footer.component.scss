@@ -3,15 +3,29 @@
     color: #fff;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    padding: 40px 0;
+    padding: 100px 0;
   }
 .head{
     padding-bottom: 15px;
     border-bottom: 1px solid #ffffff;
 
 }
+.lists li{
+  margin-bottom: 10px;
+}
+.head{
+  font-family: "Gilroy";
+  font-weight: 300;
+  font-size: 20px;
+}
 .list1, .list2, .list3{
   padding-right: 30px;
+  
+}
+.list3{
+  p{
+    margin-bottom: 10px;
+  }
 }
 .list4{
     li{
@@ -19,13 +33,13 @@
         align-items: center;
     }
     img{
-        width: 25px;
+        width: 18px;
     }
 }
   
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
@@ -35,7 +49,6 @@
     
     img{
         padding-right: 10px;
-        margin-top: 5px;
     }
   }
   
@@ -59,6 +72,12 @@
   
   .footer-logo {
     margin: 20px;
+    p{
+      margin-bottom: 10px;
+    }
+    img{
+      margin-bottom: 20px;
+    }
     /* Add additional styling for your logo here */
   }
   

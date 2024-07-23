@@ -1,0 +1,40 @@
+.section{
+    background-color: #FFF6E5;
+    padding: 60px 0;
+    position: relative;
+}
+.align{
+    text-align: center;
+    line-height: 1.6;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+.text{
+    margin-bottom: 50px;
+}
+.video {
+    width: 100%;
+    // opacity: 0.5;
+    transition: all 0.5s;
+  }
+  .play-btn {
+    background-color: white; // Or any color
+    border: none; // No border
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+    mix-blend-mode: color-dodge;
+  }
+  
+  .play-icon {
+    font-size: 40px; // Icon size, adjust as needed
+    color: black; // Icon color, adjust as needed
+  
+  }
+@media (max-width: 768px){
+    .align{
+        padding: 0 0;
+    }
+    
+}

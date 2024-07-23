@@ -3,14 +3,6 @@
     padding: 200px 0;
     position: relative;
 }
-.logo{
-    width: 200px;
-    height: fit-content;
-    margin-bottom: 20px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
 .align{
     text-align: center;
     line-height: 1.6;
@@ -21,6 +13,9 @@
 @media (max-width: 768px){
     .align{
         padding: 0 0;
+    }
+    .section{
+        padding: 100px 0;
     }
     
 }
